@@ -6,13 +6,10 @@
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "performaxapp",
-    "userInterfaceStyle": "automatic",
-    "ios": {
-      "icon": "./assets/expo.icon"
-    },
+    "userInterfaceStyle": "light",
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#6B2AEE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
@@ -28,9 +25,30 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 76
+          "backgroundColor": "#6B2AEE",
+          "image": "./assets/images/splash.png",
+          "resizeMode": "cover",
+          "enableFullScreenImage_legacy": true,
+          "android": {
+            "backgroundColor": "#6B2AEE",
+            "image": "./assets/images/android-icon-foreground.png",
+            "imageWidth": 288,
+            "resizeMode": "contain"
+          }
+        }
+      ],
+      "expo-secure-store",
+      [
+        "expo-notifications",
+        {
+          "sounds": []
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "O Performax usa a câmera para anexar fotos da ordem de serviço.",
+          "photosPermission": "O Performax usa suas fotos como evidência da ordem de serviço."
         }
       ]
     ],
