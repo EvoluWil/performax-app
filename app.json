@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "performax-app",
+    "name": "Performax",
     "slug": "performax-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -28,13 +28,7 @@
           "backgroundColor": "#6B2AEE",
           "image": "./assets/images/splash.png",
           "resizeMode": "cover",
-          "enableFullScreenImage_legacy": true,
-          "android": {
-            "backgroundColor": "#6B2AEE",
-            "image": "./assets/images/android-icon-foreground.png",
-            "imageWidth": 288,
-            "resizeMode": "contain"
-          }
+          "enableFullScreenImage_legacy": true
         }
       ],
       "expo-secure-store",

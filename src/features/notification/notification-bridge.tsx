@@ -1,12 +1,14 @@
 import { useQueryClient } from '@tanstack/react-query';
-import * as Notifications from 'expo-notifications';
 import { useRouter } from 'expo-router';
 import { useCallback, useEffect, useRef } from 'react';
 import { AppState, Platform } from 'react-native';
 
 import { markNotificationRead } from '@/features/notification/notification-api';
+import { loadNotifications } from '@/features/notification/notifications';
 import { registerPushToken } from '@/features/notification/push';
 import { useCompany, useSession } from '@/providers/session-provider';
+
+const Notifications = loadNotifications();
 
 type PushData = {
   companyId?: string;
@@ -57,7 +59,7 @@ export function NotificationBridge() {
   }, [queryClient]);
 
   useEffect(() => {
-    if (!tokens || (Platform.OS !== 'ios' && Platform.OS !== 'android')) return;
+    if (!Notifications || !tokens || (Platform.OS !== 'ios' && Platform.OS !== 'android')) return;
 
     const subscription = Notifications.addNotificationResponseReceivedListener((response) => {
       void openFromData(response.notification.request.content.data);
